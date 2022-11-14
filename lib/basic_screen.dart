@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import './immutable_widget.dart';
+import './text_layout.dart';
 
 class BasicScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: const Color(0xf23f51b5),
         title: const Text('Welcome to Flutter'),
         actions: const <Widget>[
           Padding(
@@ -15,11 +16,12 @@ class BasicScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: AspectRatio(
-          aspectRatio: 1.0,
-          child: ImmutableWidget(),
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Image.asset('assets/beach.jpg'),
+          TextLayout(),
+        ],
       ),
       drawer: Drawer(
         child: Container(

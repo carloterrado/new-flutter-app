@@ -6,9 +6,9 @@ class ImmutableWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(color: Colors.green),
-      foregroundDecoration: BoxDecoration(
+      foregroundDecoration: const BoxDecoration(
         backgroundBlendMode: BlendMode.colorBurn,
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
@@ -22,8 +22,8 @@ class ImmutableWidget extends StatelessWidget {
         child: Transform.rotate(
           angle: 180 / Math.pi,
           child: Container(
-            width: 250,
-            height: 250,
+            width: 200,
+            height: 200,
             decoration: BoxDecoration(
                 color: Colors.purple,
                 boxShadow: [
@@ -34,7 +34,7 @@ class ImmutableWidget extends StatelessWidget {
                     offset: Offset.fromDirection(1.0, 30),
                   ),
                 ],
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+                borderRadius: const BorderRadius.all(Radius.circular(20))),
             child: Padding(
               padding: const EdgeInsets.all(50.0),
               child: _buildShinyCircle(),
@@ -49,11 +49,12 @@ class ImmutableWidget extends StatelessWidget {
 Widget _buildShinyCircle() {
   return Container(
     decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: RadialGradient(
-          colors: [Colors.lightBlueAccent, Colors.blueAccent],
-          center: Alignment(-0.3, -0.5),
-        ),
-        boxShadow: [BoxShadow(blurRadius: 20)]),
+      shape: BoxShape.circle,
+      gradient: RadialGradient(
+        colors: [Colors.lightBlueAccent, Colors.blueAccent],
+        center: Alignment(-0.3, -0.5),
+      ),
+      boxShadow: [BoxShadow(blurRadius: 20)],
+    ),
   );
 }
